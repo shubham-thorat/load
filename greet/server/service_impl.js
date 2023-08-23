@@ -121,10 +121,11 @@ exports.storeRedisData = (call, callback) => {
 
       const request_count = Count.getCount()
       const data = `${request_count} ${timeRequired.toString()}\n`
+console.log("count",Count.getCount())
       if (prev_file !== file_name) {
-
+        prev_file = file_name
         console.log("1 Process Ended reinital request count", prev_file)
-        console.log("request_count", getCount())
+        console.log("request_count", Count.getCount())
         Count.setInitial()
       }
 
